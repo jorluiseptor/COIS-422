@@ -28,3 +28,41 @@ mysqli_close($db);
 
 ?>
 
+<h2>Add new city</h2>
+<form action="addcity.php" method="post"/>
+
+    <label>City Name:</label>
+    <input type="text" name="Name"/>
+    <br>
+    <br>
+    <label>Country Code:</label>
+    <input type="text" name="CountryCode"/>
+
+
+
+    
+    <select>
+        <option value="PRI">Puerto Rico</option>
+        <option value="DOM">Dominican Republic</option>
+        <option>fasf</option>
+        <option>fasf</option>
+        <option>fasf</option>
+        <option>fasf</option>
+        <option>fasf</option>
+        <option>fasf</option>
+    </select>
+    <br>
+    <br>
+    <label>District:</label>
+    <input type="text" name="District"/>
+    <br>
+    <br>
+    <label>Population:</label>
+    <input type="text" name="Population"/>
+
+    <br>
+    <br>
+    <input type="submit" value="Submit"/>
+
+
+</form>
