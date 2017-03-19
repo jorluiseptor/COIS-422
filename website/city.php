@@ -9,9 +9,7 @@
 //Step1
  $db = mysqli_connect('localhost','root','','world')
  or die('Error connecting to MySQL server.');
-?>
 
-<?php
 //Step2
 $query = "SELECT * FROM city";
 //mysqli_query($db, $query) or die('Error querying database.');
@@ -36,21 +34,34 @@ mysqli_close($db);
     <br>
     <br>
     <label>Country Code:</label>
-    <input type="text" name="CountryCode"/>
+
+    <?php
+        //Step1
+        $db = mysqli_connect('localhost','root','','world')
+        or die('Error connecting to MySQL server.');
+
+        //Step2
+        $query = "SELECT Code, Name FROM country";
+        //run sql query
+        $result = mysqli_query($db, $query);
+
+        //drop-down menu tag
+        echo '<select name="CountryCode">';
+
+            while ($row = mysqli_fetch_array($result)) {
+                //for each row, create an option tag 
+                //<option value="PUR">Peru</option>
+                echo '<option value="' .  $row['Code'] . '">' . $row['Name'] . '</option>';
+            }
+            
+        echo '</select>'; //close select tag
+
+        //Step 4
+        mysqli_close($db);
+    ?>
 
 
 
-    
-    <select>
-        <option value="PRI">Puerto Rico</option>
-        <option value="DOM">Dominican Republic</option>
-        <option>fasf</option>
-        <option>fasf</option>
-        <option>fasf</option>
-        <option>fasf</option>
-        <option>fasf</option>
-        <option>fasf</option>
-    </select>
     <br>
     <br>
     <label>District:</label>

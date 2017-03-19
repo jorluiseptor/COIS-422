@@ -19,3 +19,8 @@ $result = mysqli_query($db, $query);
 mysqli_close($db);
 
 ?>
+
+<p>
+    Your information has been added. <a href="city.php">See all cities</a> || 
+    <a href="country.php">See all countries</a>
+</p>
